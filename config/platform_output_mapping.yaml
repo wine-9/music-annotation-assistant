@@ -1,0 +1,35 @@
+version: "1.0"
+target_fields:
+  instrument_name:
+    source: instrument.canonical_label
+    scope: per_instrument
+  instrument_count:
+    source: confirmed_or_candidate_instrument_count
+    scope: global
+  arrangement_roles:
+    source: unavailable_without_review
+    scope: per_instrument
+  playing_modes:
+    source: unavailable_without_review
+    scope: per_instrument
+  pan:
+    source: instrument.spatial.pan
+    scope: per_instrument
+    forbid_global_spatial_fallback: true
+  width:
+    source: instrument.spatial.width
+    scope: per_instrument
+    forbid_global_spatial_fallback: true
+  depth:
+    source: unavailable_without_reliable_stem
+    scope: per_instrument
+  movement:
+    source: instrument.spatial.stability
+    scope: per_instrument
+    forbid_global_spatial_fallback: true
+  timbre:
+    source: instrument.timbre
+    scope: per_instrument
+  effects:
+    source: unavailable_without_review
+    scope: per_instrument

@@ -1,0 +1,55 @@
+version: "1.0"
+subtype_margin: 0.08
+canonical_labels:
+  drums:
+    display_name_zh: 鼓
+    raw_labels: [drums, drumset, snaredrum, kickdrum, cymbal, hihat]
+  percussion:
+    display_name_zh: 打击乐
+    raw_labels: [percussion, tambourine, shaker, conga, bongo]
+  bass:
+    display_name_zh: 贝斯
+    raw_labels: [bass, bassguitar, acousticbassguitar, doublebass]
+  guitar:
+    display_name_zh: 吉他
+    raw_labels: [guitar]
+  acoustic_guitar:
+    display_name_zh: 原声吉他
+    parent: guitar
+    exclusive_group: guitar_subtype
+    raw_labels: [acousticguitar, classicalguitar]
+  electric_guitar:
+    display_name_zh: 电吉他
+    parent: guitar
+    exclusive_group: guitar_subtype
+    raw_labels: [electricguitar]
+  piano:
+    display_name_zh: 钢琴
+    raw_labels: [piano, grandpiano]
+  electric_keys:
+    display_name_zh: 电钢琴
+    raw_labels: [electricpiano, rhodes, keyboard]
+  organ:
+    display_name_zh: 风琴
+    raw_labels: [organ, hammondorgan]
+  synth:
+    display_name_zh: 合成器
+    raw_labels: [synthesizer, synth]
+  pad:
+    display_name_zh: Pad
+    raw_labels: [pad]
+  strings:
+    display_name_zh: 弦乐
+    raw_labels: [strings, violin, viola, cello, doublebass]
+  brass:
+    display_name_zh: 铜管
+    raw_labels: [brass, trumpet, trombone, frenchhorn, tuba]
+  woodwind:
+    display_name_zh: 木管
+    raw_labels: [woodwind, flute, clarinet, oboe, saxophone, bassoon]
+  voice:
+    display_name_zh: 人声
+    raw_labels: [voice, vocals, malevoice, femalevoice, choir]
+  other:
+    display_name_zh: 其他
+    raw_labels: [accordion, harp, mandolin, ukulele]

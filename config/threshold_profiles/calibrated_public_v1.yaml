@@ -1,0 +1,33 @@
+profile_name: calibrated_public_v1
+version: "1.0"
+generated_at: "2026-07-27"
+applicable_datasets:
+  - OpenMIC-2018
+  - MTG-Jamendo instrument subset
+precision_target: 0.85
+source_report: outputs/evaluation/report.json
+presence_formula:
+  top_20_percent_mean: 0.65
+  p95: 0.35
+defaults:
+  candidate: 0.30
+  confirmed: 0.70
+  auto_confirm_enabled: false
+  minimum_validation_positives: 20
+labels:
+  drums: {candidate: 0.32, confirmed: 0.92066639, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  percussion: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  bass: {candidate: 0.28, confirmed: 0.55383179, auto_confirm_enabled: true, minimum_validation_positives: 20}
+  guitar: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  acoustic_guitar: {candidate: 0.30, confirmed: 0.13288865, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  electric_guitar: {candidate: 0.30, confirmed: 0.36837155, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  piano: {candidate: 0.30, confirmed: 0.70954590, auto_confirm_enabled: true, minimum_validation_positives: 20}
+  electric_keys: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  organ: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  synth: {candidate: 0.30, confirmed: 0.70978850, auto_confirm_enabled: true, minimum_validation_positives: 20}
+  pad: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  strings: {candidate: 0.15720566, confirmed: 0.15720566, auto_confirm_enabled: true, minimum_validation_positives: 20}
+  brass: {candidate: 0.30, confirmed: 0.02801385, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  woodwind: {candidate: 0.30, confirmed: 0.13320112, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  voice: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  other: {candidate: 0.35, confirmed: 0.75, auto_confirm_enabled: false, minimum_validation_positives: 20}

@@ -1,0 +1,26 @@
+version: "1.0-example-unvalidated"
+presence_formula:
+  top_20_percent_mean: 0.65
+  p95: 0.35
+defaults:
+  candidate: 0.30
+  confirmed: 0.70
+  auto_confirm_enabled: false
+  minimum_validation_positives: 20
+labels:
+  drums: {candidate: 0.32, confirmed: 0.68, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  percussion: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  bass: {candidate: 0.28, confirmed: 0.61, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  guitar: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  acoustic_guitar: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  electric_guitar: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  piano: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  electric_keys: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  organ: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  synth: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  pad: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  strings: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  brass: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  woodwind: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  voice: {candidate: 0.30, confirmed: 0.70, auto_confirm_enabled: false, minimum_validation_positives: 20}
+  other: {candidate: 0.35, confirmed: 0.75, auto_confirm_enabled: false, minimum_validation_positives: 20}

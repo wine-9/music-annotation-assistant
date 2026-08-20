@@ -1,0 +1,14 @@
+version: "1.0"
+epsilon: 1.0e-12
+silence_rms: 1.0e-4
+mono_correlation: 0.995
+phase_warning_correlation: -0.20
+pan:
+  center_abs_max: 0.15
+  moving_iqr_min: 0.25
+width:
+  mono_max: 0.02
+  narrow_max: 0.18
+  medium_max: 0.60
+frame_seconds: 0.10
+hop_seconds: 0.05

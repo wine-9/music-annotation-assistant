@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音乐音频智能预标注助手</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">LOCAL AUDIO INTELLIGENCE</p>
+      <h1>音乐音频智能预标注助手</h1>
+      <p class="lead">识别常见乐器、出现区间与整体声场。文件只在这台电脑上处理。</p>
+      <div class="notice">模型结果仅用于预标注，需要人工复核。</div>
+      <p class="header-actions">
+        <a class="button" href="/practical">进入乐器识别实战</a>
+      </p>
+    </header>
+
+    <section class="panel profile-panel">
+      <div>
+        <p class="eyebrow">THRESHOLD PROFILE</p>
+        <h2>确认阈值配置</h2>
+        <p id="profile-details" class="raw">正在读取配置…</p>
+      </div>
+      <label>当前配置
+        <select id="profile-select" aria-label="阈值配置"></select>
+      </label>
+    </section>
+
+    <section class="panel upload-panel">
+      <h2>选择音频</h2>
+      <form id="upload-form">
+        <label class="drop-zone" for="audio-file">
+          <span>拖入或选择 WAV、MP3、FLAC、M4A、AAC、OGG</span>
+          <input id="audio-file" name="audio" type="file" accept=".wav,.mp3,.flac,.m4a,.aac,.ogg" required>
+        </label>
+        <label class="toggle">
+          <input name="enable_separation" type="checkbox" value="true">
+          可选四轨分离（drums / bass / vocals / other，速度较慢）
+        </label>
+        <button type="submit">开始分析</button>
+      </form>
+      <div id="progress" hidden>
+        <div class="progress-track"><div id="progress-bar"></div></div>
+        <p id="stage">准备中</p>
+      </div>
+      <p id="error" class="error" hidden></p>
+    </section>
+
+    <section id="player-panel" class="panel" hidden>
+      <h2>播放与复核</h2>
+      <audio id="player" controls></audio>
+    </section>
+
+    <section id="spatial-panel" class="panel" hidden>
+      <h2>整体声场</h2>
+      <div id="spatial-grid" class="metric-grid"></div>
+    </section>
+
+    <section id="results-panel" hidden>
+      <div class="section-heading">
+        <h2>乐器预标注</h2>
+        <div>
+          <button id="copy-json" class="secondary">复制 JSON</button>
+          <a id="csv-link" class="button secondary">导出 CSV</a>
+        </div>
+      </div>
+      <div id="cards" class="cards"></div>
+      <form id="add-label-form" class="panel add-label">
+        <h3>添加人工标签</h3>
+        <input id="manual-label" placeholder="例如：woodwind" required>
+        <button type="submit">添加并确认</button>
+      </form>
+    </section>
+
+    <section id="form-preview-panel" class="panel" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TARGET PLATFORM</p>
+          <h2>目标标注表单预览</h2>
+        </div>
+        <button id="finish-review">完成本轮人工复核</button>
+      </div>
+      <div id="form-summary" class="metric-grid"></div>
+      <div id="form-fields" class="form-fields"></div>
+      <p class="raw">接受、修改、删除、添加或标记漏标都会记录操作时间；只有点击“完成本轮人工复核”后才计入可用性报告。</p>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

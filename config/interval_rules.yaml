@@ -1,0 +1,19 @@
+version: "1.0"
+defaults:
+  hysteresis_threshold_ratio: 0.80
+  minimum_duration_seconds: 2.0
+  interval_gap_merge_seconds: 2.0
+  transient_filtering:
+    enabled: true
+    minimum_active_windows: 1
+labels:
+  drums: {hysteresis_threshold_ratio: 0.72, minimum_duration_seconds: 0.8, interval_gap_merge_seconds: 1.2, transient_filtering: {enabled: false, minimum_active_windows: 1}}
+  percussion: {hysteresis_threshold_ratio: 0.72, minimum_duration_seconds: 0.6, interval_gap_merge_seconds: 1.0, transient_filtering: {enabled: false, minimum_active_windows: 1}}
+  bass: {hysteresis_threshold_ratio: 0.82, minimum_duration_seconds: 2.5, interval_gap_merge_seconds: 2.5, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  acoustic_guitar: {hysteresis_threshold_ratio: 0.80, minimum_duration_seconds: 2.0, interval_gap_merge_seconds: 2.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  electric_guitar: {hysteresis_threshold_ratio: 0.80, minimum_duration_seconds: 2.0, interval_gap_merge_seconds: 2.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  piano: {hysteresis_threshold_ratio: 0.78, minimum_duration_seconds: 1.5, interval_gap_merge_seconds: 2.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  strings: {hysteresis_threshold_ratio: 0.85, minimum_duration_seconds: 3.0, interval_gap_merge_seconds: 3.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  synth: {hysteresis_threshold_ratio: 0.85, minimum_duration_seconds: 3.0, interval_gap_merge_seconds: 3.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  brass: {hysteresis_threshold_ratio: 0.80, minimum_duration_seconds: 1.5, interval_gap_merge_seconds: 2.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
+  woodwind: {hysteresis_threshold_ratio: 0.80, minimum_duration_seconds: 1.5, interval_gap_merge_seconds: 2.0, transient_filtering: {enabled: true, minimum_active_windows: 1}}
