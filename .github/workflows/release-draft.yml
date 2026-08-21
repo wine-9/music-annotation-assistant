@@ -1,0 +1,37 @@
+name: Release draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Previous release tag or commit
+        required: true
+        default: v0.1.0
+      head:
+        description: Candidate release ref
+        required: true
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate review-only release and promotion draft
+        run: |
+          python scripts/generate_release_draft.py \
+            --base "${{ inputs.base }}" \
+            --head "${{ inputs.head }}" \
+            --output "$RUNNER_TEMP/release-draft.md"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-draft
+          path: ${{ runner.temp }}/release-draft.md
+          if-no-files-found: warn
