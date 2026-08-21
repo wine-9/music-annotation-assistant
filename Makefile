@@ -2,7 +2,7 @@ PYTHON ?= .venv/bin/python
 PYTHON_BOOTSTRAP ?= $(shell command -v python3.12 2>/dev/null || command -v python3.11 2>/dev/null || command -v python3.10 2>/dev/null || command -v python3)
 PIP := $(PYTHON) -m pip
 
-.PHONY: setup setup-model setup-evaluation setup-separation download-models verify-models download-evaluation evaluate usability-report product-validation-report test lint run benchmark
+.PHONY: setup setup-model setup-evaluation setup-separation download-models verify-models download-evaluation evaluate usability-report product-validation-report test lint run benchmark autopilot-observe autopilot-safe-fix
 
 setup:
 	$(PYTHON_BOOTSTRAP) -m venv .venv
@@ -48,3 +48,9 @@ run:
 
 benchmark:
 	$(PYTHON) scripts/benchmark_local.py $(ARGS)
+
+autopilot-observe:
+	$(PYTHON) scripts/autopilot.py observe
+
+autopilot-safe-fix:
+	$(PYTHON) scripts/autopilot.py safe-fix

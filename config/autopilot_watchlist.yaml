@@ -1,0 +1,20 @@
+# Upstream checks notify maintainers only. Update `known_release` only after
+# reviewing compatibility, licence, privacy, and quality implications.
+upstreams:
+  - name: Essentia
+    kind: github_release
+    repository: MTG/essentia
+    known_release: v2.1-beta6
+    approval: model-quality-and-licence
+  - name: Demucs
+    kind: github_release
+    repository: facebookresearch/demucs
+    known_release: v4.0.1
+    approval: model-quality-and-licence
+  - name: FastAPI
+    kind: pypi
+    package: fastapi
+    # Dependabot owns dependency update PRs. This value only avoids repeated
+    # reminders until a maintainer reviews an upstream version.
+    known_release: 0.115.0
+    approval: dependency-compatibility-and-licence
